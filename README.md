@@ -1,9 +1,8 @@
-
 Breve descrição do grupo
 
-* Turno: [L]XX
-* Grupo: YY
+* Turno: [L]11
+* Grupo: 07
 * Alunos:
-    - Aluno1 upZZZZZ 
-    - Aluno2 upZZZZZ
-    - Aluno3 upZZZZZ
+    - Miguel Dionísio up202108788
+    - Rúben Esteves up202006479
+    - Samuel Maciel up202108697
