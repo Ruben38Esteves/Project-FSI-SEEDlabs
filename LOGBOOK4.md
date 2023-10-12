@@ -15,3 +15,14 @@ Guardamos em ficheiros diferentes as variáveis de ambiente do processo filho e 
 ## Task 3
 Quando o código do arquivo "myenv.c" é executado com o terceiro argumento de execve() definido como NULL, as variáveis de ambiente não são transmitidas para esse pointer, uma vez que possui um valor nulo, dando um output vazio.
 Se substituirmos NULL por environ, esse array será utilizado para transmitir as variáveis de ambiente.
+
+## Task 4
+Utilizando o comando system(), podemos executar o comando na shell, ao contrário de execve(). Verificamos que utilizando system() é criado um novo processo em que todas as variáveis de ambiente são passadas do  processo anterior.
+Com execve() o comando é executado mantendo o processo atual e as varáveis de ambiente. O processo em execução é substituido pelo comando passado como argumento, que apenas mantém as variáveis de ambiente se as mesmas forem passadas como argumento.
+
+## Task 5
+Set-UID é um mecanismo de segurança do Unix no qual um user pode executar um programa com permissões de criador.
+No Step 1 criou-se um programa que dá print a todas as variáveis de ambiente no processo atual.
+Compilamos, mudamos o owner para root e tornamo-lo num programa Set-UID.
+Depois realizamos algumas alterações em algumas variáveis de ambiente.
+
