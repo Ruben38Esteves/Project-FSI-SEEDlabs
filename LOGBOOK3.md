@@ -1,6 +1,6 @@
 #Wordpress CVE
 
-##TASK 1
+## TASK 1
 
 Versão do wordpress: 5.8.1;
 Plugins instalados: 
@@ -8,13 +8,13 @@ Plugins instalados:
     -Booster for WooCommerce plugin, 5.4.3;
 Possíveis utilizadores: Orval Sanford;
 
-##TASK 2
+## TASK 2
 
 
-##TASK3
+## TASK3
 
 
-##TASK4
+## TASK4
 
 
-##TASK5
+## TASK5
