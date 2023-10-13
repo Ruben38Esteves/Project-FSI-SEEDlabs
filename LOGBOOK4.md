@@ -28,6 +28,6 @@ Depois definimos algumas variáveis de ambiente utilizando export.
 Executando novamente verificamos que as variáveis definidas anteriormente estão na lista de variáveis de ambiente do programa, à exceção de LD_LIBRARY_PATH. Isto porque esta variável permite definir um caminho onde o programa vai procurar as bibliotecas partilhadas, que seria vulnerável.
 
 ## Task 6
-Criamos um programa Set-UID 
+Criamos um programa Set-UID que chama o comando "ls" do Linux. Mundando a variavel PATH para um outro diretorio faremos com que esse programa corra um outro programa malicioso (tambem chamado "ls") criado por nos. Apos correr o codigo, verificamos que a funçao "ls" executada foi a nossa.
 
 
