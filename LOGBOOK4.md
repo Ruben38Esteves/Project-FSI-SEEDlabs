@@ -24,5 +24,10 @@ Com execve() o comando é executado mantendo o processo atual e as varáveis de 
 Set-UID é um mecanismo de segurança do Unix no qual um user pode executar um programa com permissões de criador.
 No Step 1 criou-se um programa que dá print a todas as variáveis de ambiente no processo atual.
 Compilamos, mudamos o owner para root e tornamo-lo num programa Set-UID.
-Depois realizamos algumas alterações em algumas variáveis de ambiente.
+Depois definimos algumas variáveis de ambiente utilizando export.
+Executando novamente verificamos que as variáveis definidas anteriormente estão na lista de variáveis de ambiente do programa, à exceção de LD_LIBRARY_PATH. Isto porque esta variável permite definir um caminho onde o programa vai procurar as bibliotecas partilhadas, que seria vulnerável.
+
+## Task 6
+Criamos um programa Set-UID 
+
 
