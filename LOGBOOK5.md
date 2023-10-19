@@ -17,7 +17,12 @@ Após compilarmos call_shellcode.c, um programa que gera o binario para as shell
 <br>
 ## Task 2 - O Programa Vulnerável
 O programa vulnerável utilizado neste SeedLabs é stack.c. Tem uma vulnerabilidade de buffer overflow, da qual nos vamos aproveitar para ganhar root privilege.
-No programa em questão o bufffer overflow acontece quando se tenta fazer um strcpy(buffer, str) tendo buffer apenas 100 bytes e str 517. Como strcpy não verifica limites, ocorre buffer overflow.
+No programa em questão o bufffer overflow acontece quando se tenta fazer um strcpy(buffer, str) tendo buffer apenas 100 bytes e str 517. Como strcpy não verifica limites, ocorre buffer overflow. Compilamos o programa utilizando o MakeFile que já tem determinadas configurações (imagem abaixo) que desligam o StackGuard, mudam a ownership do programa para root e ativamos o Set-UID. <br>
+![](../pictures/log5pic3.png)
+
+## Task 3 - Atacar o programa 32 bits.
+
+
 
 
 
