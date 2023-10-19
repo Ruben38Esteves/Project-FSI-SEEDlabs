@@ -1,4 +1,6 @@
-#Linux Environment CTF
+# Linux Environment CTF
+
+## Parte 1 - Investigaçao
 
 Começamos por correr o comando indicado para nos conectarmos ao servidor:
 
@@ -21,6 +23,8 @@ Sendo capazes de criar ficheiros, percebemos que existe a possibilidade de  faze
 ![](../pictures/catmain.png)
 
 Existe uma chamada ao comando "access".
+
+## Parte 2 - Captura da Bandeira
 
 O nosso objetivo passou entao agora a ser criar um programa chamado "access" capaz de ir buscar a bandeira ao ficheiro a qual nós nao temos acesso e transferi-la para um ficheiro de texto ao qual nós tenhamos acesso.
 
