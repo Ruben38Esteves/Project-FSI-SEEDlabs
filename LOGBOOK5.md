@@ -11,7 +11,8 @@ Neste Seedlabs o programa a atacar será um Set-UID, e utilizaremos bin/sh, que 
 # IMAGEM2
 
 ## Task 1 - ShellCode
-Shellcode é essencialmente código que permite lançar uma shell. Neste SeedLabs facultam-nos uma shellcode de 32 e 64 bits, sem dar grande ênfase a como funciona o código assembly.
+Shellcode é essencialmente código que permite lançar uma shell. Neste SeedLabs mostram-nos uma shellcode de 32 e 64 bits, sem dar grande ênfase a como funciona o código assembly. 
+Após compilarmos call_shellcode.c foram generados dois ficheiros a32.out e a64.out que quando corridos, ambos abriram uma shell no diretório onde se encontravam.
 
 
 
