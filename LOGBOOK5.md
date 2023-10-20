@@ -40,6 +40,17 @@ Executamos o exploit, que modificou badfile, e depois executamos o programa vuln
 
 Para aproveitar  a vulnerabilidade é necessário descobrir a função onde se encontra o buffer-overflow. Utiliza-se o debugger gdb para isso <br>
 ![](../pictures/log5pic9.png) <br>
+O nosso badfile está ainda está vazio. Utilizamos então o programa exploit fornecido, alteramos a variável shellcode, pondo a shellcode de 32 bits da call_shellcode.c <br>
+![](../picture/log5pic10.png)<br>
+É necessário pôr A shellcode no fim do badfile.<br>
+![](../picture/log5pic11.png)<br>
+O return address é alterado para o endereço do início do buffer-overflow + 400 (suficiente para chegar à NOP e assim executar a shellcode)<br>
+![](../pictures/log5pic12.png)<br>
+Como não sabemos o tamanho do buffer então temos de usar o ret em vários lugares e um deles será o id address<br>
+![](../pictures/log5pic13.png)<br>
+Por fim, executa-se o exploit, de seguida, executa-se o vulnerabilidade.<br>
+![](../pictures/log5pic14.png)<br>
+
 
 
 
