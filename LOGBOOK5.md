@@ -20,9 +20,9 @@ O programa vulnerável utilizado neste SeedLabs é stack.c. Tem uma vulnerabilid
 No programa em questão o bufffer overflow acontece quando se tenta fazer um strcpy(buffer, str) tendo buffer apenas 100 bytes e str 517. Como strcpy não verifica limites, ocorre buffer overflow. Compilamos o programa utilizando o MakeFile que já tem determinadas configurações (imagem abaixo) que desligam o StackGuard, mudam a ownership do programa para root e ativamos o Set-UID. <br>
 ![](../pictures/log5pic3.png)<br>
 
-## Task 3 - Atacar o programa 32 bits.~
+## Task 3 - Atacar o programa 32 bits.
 
-Para nos podermos aproveitar da vulnerabilidade buffer overflow deste programa precisamos de saber o endereço inicial do buffer e onde está o return address. Utilizando o debugger gdb conseguimos encontrar estes valores. <br>
+Para nos podermos aproveitar da vulnerabilidade buffer overflow deste programa precisamos de saber o endereço inicial do buffer e onde está o return address. Utilizando o debugger gdb conseguimos encontrar estes valores e calcular o offset <br>
 ![](../pictures/log5pic4.png) <br>
 Subtraindo o endereço do buffer ao endereço de ebp em cima representados temos então o resultado 6C. Para o nosso offset teremos de adicionar 4, para apontar para o return address.
 Falta-nos inserir no badfile aquilo que queremos por no buffer. Para isso utilizamos o programa exploit fornecido, com algumas alterações:
@@ -30,8 +30,11 @@ Na variável shellcode, pusemos o shellcode de 32 bits fornecido em call_shellco
 ![](../pictures/log5pic5.png)<br>
 Um array de bytes com o tamanho máximo lido pelo programa vulnerável (517) foi criado. Posicionamos a shellcode no final desse array.<br>
 ![](../pictures/log5pic6.png)<br>
-Introduzimos em ret o endereço que aponta para o shellcode. Introduzimos o offset, calculado da maneira descrita em cima.
-
+Introduzimos em ret o endereço de ebp + 200. Será suficiente para chegar à zona NOP e permitir que o shellcode seja executado. Introduzimos o offset, calculado da maneira descrita em cima e adicionamos 4. <br><br>
+![](../pictures/log5pic7.png)
+<br><br>
+Executamos o exploit, que modificou badfile, e depois executamos o programa vulnerável. Abriu uma root shell como esperado. <br><br>
+![](../pictures/log5pic8.png)
 
 
 
