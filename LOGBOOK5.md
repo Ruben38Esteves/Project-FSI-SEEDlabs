@@ -36,7 +36,10 @@ Introduzimos em ret o endereço de ebp + 200. Será suficiente para chegar à zo
 Executamos o exploit, que modificou badfile, e depois executamos o programa vulnerável. Abriu uma root shell como esperado. <br><br>
 ![](../pictures/log5pic8.png)
 
+## Task 4 - Atacar sabendo apenas o endereço do buffer
 
+Para aproveitar  a vulnerabilidade é necessário descobrir a função onde se encontra o buffer-overflow. Utiliza-se o debugger gdb para isso <br>
+<br>
 
 
 
