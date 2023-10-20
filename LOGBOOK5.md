@@ -39,7 +39,9 @@ Executamos o exploit, que modificou badfile, e depois executamos o programa vuln
 ## Task 4 - Atacar sabendo apenas o endereço do buffer
 
 Para aproveitar  a vulnerabilidade é necessário descobrir a função onde se encontra o buffer-overflow. Utiliza-se o debugger gdb para isso <br>
-<br>
+![](../pictures/log5pic9.png) <br>
+
+
 
 
 
