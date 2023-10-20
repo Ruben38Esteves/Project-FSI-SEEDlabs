@@ -20,7 +20,10 @@ O programa vulnerável utilizado neste SeedLabs é stack.c. Tem uma vulnerabilid
 No programa em questão o bufffer overflow acontece quando se tenta fazer um strcpy(buffer, str) tendo buffer apenas 100 bytes e str 517. Como strcpy não verifica limites, ocorre buffer overflow. Compilamos o programa utilizando o MakeFile que já tem determinadas configurações (imagem abaixo) que desligam o StackGuard, mudam a ownership do programa para root e ativamos o Set-UID. <br>
 ![](../pictures/log5pic3.png)
 
-## Task 3 - Atacar o programa 32 bits.
+## Task 3 - Atacar o programa 32 bits.~
+
+Para nos podermos aproveitar da vulnerabilidade buffer overflow deste programa precisamos de saber o endereço inicial do buffer e onde está o return address. Utilizando gdb, um método de debugging, conseguimos encontrar estes valores. <br>
+![](../pictures/log5pic4.png)
 
 
 
