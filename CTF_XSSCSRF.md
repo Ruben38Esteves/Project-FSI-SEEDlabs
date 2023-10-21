@@ -10,7 +10,7 @@ Clicando em submit, somos redirecionados para a seguinte pagina:
 
 ![](../pictures/CTF6just.png)
 
-Note-se que ao url foi acrescentado "request/<requestid>", sendo o <requestid> o id que aparecia na primeira pagina.
+Note-se que ao url foi acrescentado "request/[requestid]", sendo o [requestid] o id que aparecia na primeira pagina.
 Esta pagina tem um link apara a pagina que o admin ira usar para aprovar o nosso pedido:
 
 ![](../pictures/CTF6adminpage.png)
@@ -25,7 +25,7 @@ Inspecionando o codigo fonte da pagina, encontramos o form de aceitaçao:
 Sabendo isto, escrevemos o nosso proprio form de aceitaçao:
 
 ```html
-<form method="POST" action="http://ctf-fsi.fe.up.pt:5005/request/<requestid>/approve" role="form" hidden>
+<form method="POST" action="http://ctf-fsi.fe.up.pt:5005/request/[requestid]/approve" role="form" hidden>
     <div class="submit">
         <input type="submit" id="giveflag" value="Give the flag">
     </div>
@@ -34,7 +34,7 @@ Sabendo isto, escrevemos o nosso proprio form de aceitaçao:
     </script>
 </form>
 ```
-(Sendo <requestid> o id que se encontrou na primeira pagina)
+(Sendo [requestid] o id que se encontrou na primeira pagina)
 
 Assim, ao correr isto, o admin sera direcionado para a pagina de aceitaçao e ira "clicar" no botao "giveflag".
 
