@@ -8,7 +8,7 @@ Começamos por instalar o recomendado no guião, a biblioteca pwntools e o progr
 
 Analisamos os ficheiros fornecidos. Com o programa que instalamos checksec verificamos que program tem arquitetura x86, as posições do binário não estão randomizadas, existem regiões de memória com permissões de leitura, escrita e execução, referindo-se à stack neste caso.
 <br><br>
-![](../pictures/CTF_BO_pic1.png)
+![](../pictures/CTF_BO_Pic1.png)
 <br><br>
 Analisando main.c vemos que o código aloca memória para meme_file um buffer (8 e 32 bytes respetivamente). Vemos também que pode ocorrer overflow na seguinte linha, que permite um buffer overflow, permitindo a cópia de 40 bytes para o buffer de apenas 32.
 ```c
@@ -39,7 +39,7 @@ Se enchermos o buffer, começamos a escrever em val, e introduzindo o valor dese
 <br>
 Corremos e deu-nos a flag.
 <br>
-![](../pictures/CTF_BO_pic6.png)
+![](../pictures/CTF_BO-pic6.png)
 
 
 
