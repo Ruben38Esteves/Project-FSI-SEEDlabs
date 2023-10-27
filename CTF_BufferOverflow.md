@@ -20,7 +20,7 @@ Se introduzirmos um input que exceda a capacidade do buffer, vamos começar a es
 <br><br>
 Executando, deu display à nossa flag, que introduzimos na plataforma.
 
-![](../pictures/CTF_BO_pic3.png)
+![](../pictures/CTF_BO_Pic3.png)
 
 ## Desafio 2
 
