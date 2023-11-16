@@ -35,7 +35,7 @@ echo 'hello' | nc 10.9.0.5 9090
 
 O servidor retornou o seguinte:
 
-![](../pictures/log7pic2) <br>
+![](../pictures/log7pic2.png) <br>
 
 Enviando a string ```'%s'``` para o servidor vai fazer com que a format string tente ir buscar o endereço acima de si na stack e tente imprimir a string que lá estaria. O servidor "crashou" fazendo isto, não houve a mensagem "Returned Properly".
 
