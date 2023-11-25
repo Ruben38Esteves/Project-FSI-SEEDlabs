@@ -8,4 +8,6 @@ SELECT username FROM user WHERE username = 'admin'--' AND password = 'wtv'
 
 Utilizamos a aspa e os dois traços para que tudo aquilo que está depois do username fique comentado, fazendo o username ficar como o único critério para ir buscar o user para a sessão. Entramos assim na conta do admin, e a flag estava lá impressa.~
 
-[!]
+![](../pictures/ctfsql.png)
+
+
