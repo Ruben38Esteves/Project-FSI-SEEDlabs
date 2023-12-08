@@ -22,7 +22,7 @@ Isto causa um grande problema pois reduz o numero de chaves possiveis de `3,5x10
 
 De seguida corremos o comando no terminal e encontramos o seguinte:
 
-// FOTO DO COMANDO
+![](../pictures/CTF10_1.png)
 
 ## Parte 2
 
@@ -74,6 +74,6 @@ print(result_string)
 
 Passado algum tempo de termos colocado o codigo a correr, lemos o seguinte output na consola:
 
-// FOTO DA FLAG
+![](../pictures/CTF10_2.png)
 
 ### Encontramos a flag!
