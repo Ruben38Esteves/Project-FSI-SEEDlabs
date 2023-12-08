@@ -2,7 +2,7 @@
 
 ## Setup
 
-Começamos por adicionar novas entradas nos hosts conhecidos pela VM usando ´´´sudo nano etc/hosts´´´ e iniciamos os containers do lab.
+Começamos por adicionar novas entradas nos hosts conhecidos pela VM usando e iniciamos os containers do lab.
 
 ## Task 1
 
@@ -50,3 +50,17 @@ para iniciar o servidoor Apache abrimos uma shell no container e inserimos ´´�
 Acedendo a https://bank32.com vimos que a ligaçao não era segura. Para corrigir isto, importamos o certificado CA que geramos.
 
 ![](../pictures/log11pic9.png)
+
+## Task 5
+
+Mudou-se a configuração do servidor para termos o site ww.example.com:
+
+![](../pictures/log11pic10.png)
+
+Alteramos tambem /etc/hosts ligando www.example.com a 10.9.0.80
+
+![](../pictures/log11pic11.png)
+
+Ao tentaracederao site example.com, vemmos que o browser alerta para um risco, devido ao nome do domínio não corresponder ao que estã presente no certificado do servidor
+
+![](../pictures/log11pic12.png)
