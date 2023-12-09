@@ -98,11 +98,52 @@ De seguida desincriptamos com o comando:
 
 ```bash
 openssl enc -bf-cbc -d -in bf_enc.txt -out bf_de.txt -K  00112233445566778889aabbccddeeff -iv 0102030405060708
-
 ```
 
 Ficheiro desincriptado, `bf_de.txt`:
 
 ![](../pictures/log10pic13.png)
 
+## Task 3: Encryption Mode – ECB vs. CBC
 
+Para começar, encriptamos o ficheiro `pic_original.bmp` com os modos ECB (Electronic Code Book), `-aes-128-ecb`, e CBC (Cipher Block Chaining), `-aes-128-cbc` com os comandos:
+
+```bash
+openssl enc -aes-128-ecb -e -in pic_original.bmp -out pic_ecb.bmp -K  00112233445566778889aabbccddeeff
+```
+
+```bash
+openssl enc -aes-128-cbc -e -in pic_original.bmp -out pic_cbc.bmp -K  00112233445566778889aabbccddeeff -iv 0102030405060708
+```
+
+Para os ficheiros encriptados serem tratados como ficheiros `.bmp` legítimos, precisamos dos primeiros 54 bytes que contém o header do ficheito `pic_original.bmp`. De seguida trocámos o header do ficheiro encriptado pelo header do ficheiro original.
+
+Ficheiro original:
+
+![](../pictures/log10pic16.png)
+
+Para o ficheiro `pic_ecb.bmp` usamos os comandos:
+
+```bash
+head -c 54 pic_original.bmp > header
+tail -c +55 pic_ecb.bmp > body
+cat header body > pic_ecb.bmp
+```
+
+Imagem do ficheiro `pic_ebc.bmp`:
+
+![](../pictures/log10pic14.png)
+
+Para o ficheiro `pic_cbc.bmp` usamos os comandos:
+
+```bash
+head -c 54 pic_original.bmp > header
+tail -c +55 pic_cbc.bmp > body
+cat header body > pic_cbc.bmp
+```
+
+Imagem do ficheiro `pic_cbc.bmp`:
+
+![](../pictures/log10pic15.png)
+
+Em suma, no modo ECB as formas presentes no ficheiro original continuam visíveis mas as cores ficam distorcidas enquanto que no modo CBC não se percebe o que era o ficheiro original. Isto acontece pois o modo ECB ao encriptar plaintext blocks idênticos cria ciphertext blocks idênticos, ou seja, como muitos dos pixeis têm a mesma cor então será possível ver as formas do ficheiro original. No modo CBC, não é possível ver o ficheiro original, pois este modo encripta cada bloco independemente.
