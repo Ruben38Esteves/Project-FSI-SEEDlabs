@@ -147,3 +147,21 @@ Imagem do ficheiro `pic_cbc.bmp`:
 ![](../pictures/log10pic15.png)
 
 Em suma, no modo ECB as formas presentes no ficheiro original continuam visíveis mas as cores ficam distorcidas enquanto que no modo CBC não se percebe o que era o ficheiro original. Isto acontece pois o modo ECB ao encriptar plaintext blocks idênticos cria ciphertext blocks idênticos, ou seja, como muitos dos pixeis têm a mesma cor então será possível ver as formas do ficheiro original. No modo CBC, não é possível ver o ficheiro original, pois este modo encripta cada bloco independemente.
+
+### Teste
+
+Ficheiro original de teste:
+
+![](../pictures/log10pic17.png)
+
+Da mesma forma que foi anteriormente descrito, encriptamos a imagem de teste e obtemos os seguintes objetos encriptados.
+
+Ficheiro encriptado pelo modo ECB de teste:
+
+![](../pictures/log10pic18.png)
+
+Ficheiro encriptado pelo modo CBC de teste:
+
+![](../pictures/log10pic19.png)
+
+Observamos, o que foi anteriormente falado em relação aos modos de encriptação de blocos.
