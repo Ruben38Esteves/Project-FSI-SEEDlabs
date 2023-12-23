@@ -132,3 +132,26 @@ Os packets são retornados na shell do seed-attacker:
 
 ## Task 1.2: Spoofing ICMP Packets
 
+O objetivo desta task é dar spoof a IP packets com uma arbitrary source IP address. Vamos dar spoof ICMP echo request packets e enviá-los para outra VM na mema network. Para isso utilizámos Wireshark para observar se nossa request será aceite pelo receiver. Se for aceite, um echo reply packet será enviado para o spoofed IP address.
+
+Utilizámos o ficheiro `task1.2.py` para desempenhar a tarefa:
+
+![](../pictures/log13pic21.png)
+
+Abrimos o Wireshark:
+
+![](../pictures/log13pic22.png)
+
+Abrimos no ``host 1.2.3.4``:
+
+![](../pictures/log13pic23.png)
+
+Na shell do `seed-attacker` corremos o ficheiro `task1.2.py`:
+
+![](../pictures/log13pic24.png)
+
+Voltamos ao Wireshark:
+
+![](../pictures/log13pic25.png)
+
+Recebemos um echo reply packet será enviado para o spoofed IP address.
