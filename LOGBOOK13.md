@@ -11,7 +11,7 @@ De seguida descobrimos as shells existentes, com o comando `dockps`:
 
 ![](../pictures/log13pic1.png)
 
-Assim, com o comando `docksh` conseguimos usar a shell de cada uma das opções acima `seed-attacker`, `hostA` e `HostB`.
+Assim, com o comando `docksh` conseguimos usar a shell de cada uma das opções acima `seed-attacker`, `hostA` e `hostB`.
 
 Antes de iniciar as tasks, é necessário saber o nome da network interface e usar scapy.
 
@@ -89,4 +89,46 @@ E de seguida corrermos o ficheiro `task1.1.py`, obtemos:
 Percebemos que não nos é permitido  pois não temos permissões para isso.
 
 ### Task 1.1B
+
+Quando fazemos packet sniffing procurámos certos tipos de packets, para conseguirmos filtrar usámos os filters, assim como dá para ver na tarefa anterior em que apenas capturávamos ``ICMP packets``.
+
+#### - Capture any TCP packet that comes from a particular IP and with a destination port number 23.
+
+Desta vez, queremos todos os `TCP packets` que provêm de um IP, em particular, e tenha destino na ``porta 23(telnet)``.
+
+Começámos por editar o ficheiro `task1.1.py`:
+
+![](../pictures/log13pic15.png)
+
+De seguida abrimos um terminal e acedemos a shell do `hostB` com o comando `docksh 48`.
+
+Na shell do `seed-attacker` corremos o ficheiro `task1.1.py`.
+
+De seguido vamos à shell do `hostB` e corremos o comando `telnet 10.9.0.5`:
+
+![](../pictures/log13pic16.png)
+
+Os packets são retornados na shell do seed-attacker:
+
+![](../pictures/log13pic17.png)
+
+#### - Capture  packets  comes  from  or  to  go  to  a  particular  subnet.
+
+Agora, queremos packets que provêm ou vão para um subnet particular.
+
+Começámos por editar o ficheiro `task1.1.py`:
+
+![](../pictures/log13pic18.png)
+
+Na shell do `seed-attacker` corremos o ficheiro `task1.1.py`.
+
+De seguido vamos à shell do `hostB` e corremos o comando `ping 128.230.0.11`:
+
+![](../pictures/log13pic19.png)
+
+Os packets são retornados na shell do seed-attacker:
+
+![](../pictures/log13pic20.png)
+
+## Task 1.2: Spoofing ICMP Packets
 
